@@ -1,0 +1,110 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String @id @default(uuid())
+  name         String
+  email        String @unique
+  passwordHash String
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  projects  Project[]
+}
+
+model Project {
+  id   String @id @default(uuid())
+  name String
+  slug String 
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  apiKeys ApiKey[]
+  events  Event[]
+
+  @@index([userId])
+}
+
+model ApiKey {
+  id String @id @default(uuid())
+
+  name      String
+  keyHash   String @unique
+  keyPrefix String
+
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  createdAt  DateTime  @default(now())
+  lastUsedAt DateTime?
+
+  @@index([projectId])
+}
+
+model Event {
+  id String @id @default(uuid())
+
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  name String
+  type String
+
+  traceId String?
+  spanId  String?
+
+  status   String?
+  duration Int?
+
+  model        String?
+  inputTokens  Int?
+  outputTokens Int?
+  cost         Float?
+
+  errorMessage String?
+  errorStack   String?
+
+  payload Json?
+  output  Json?
+
+  createdAt DateTime @default(now())
+
+  analysis EventAnalysis?
+
+  @@index([projectId])
+  @@index([createdAt])
+  @@index([traceId])
+  @@index([type])
+  @@index([status])
+}
+
+model EventAnalysis {
+  id String @id @default(uuid())
+
+  eventId String @unique
+  event   Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  summary        String
+  rootCause      String
+  impact         String
+  recommendation String
+  severity       String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

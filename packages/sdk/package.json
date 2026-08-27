@@ -1,0 +1,21 @@
+{
+  "name": "@souvik080/agentlens-sdk",
+  "version": "0.1.1",
+  "description": "AgentLens SDK for AI and LLM observability",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "observability",
+    "agents",
+    "monitoring"
+  ]
+}
