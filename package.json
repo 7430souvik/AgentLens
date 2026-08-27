@@ -9,7 +9,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "start": "bun apps/backend/server.js"
+    "start": "bun apps/backend/src/server.js"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
