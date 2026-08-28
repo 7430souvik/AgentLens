@@ -27,7 +27,7 @@ export default function CreateProject() {
             setError("");
 
             const response = await api.post(
-                "/projects",
+                "/api/projects",
                 {
                     name: name.trim(),
                     description:
@@ -45,7 +45,7 @@ export default function CreateProject() {
                 response.data;
 
             navigate(
-                `/projects/${project.id}`
+                `/api/projects/${project.id}`
             );
 
         } catch (error: any) {
