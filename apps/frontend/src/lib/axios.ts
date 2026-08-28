@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://ec2-3-110-219-142.ap-south-1.compute.amazonaws.com/",
+    baseURL: "https://agentlens-backend-j3qh.onrender.com/",
     withCredentials: true,
     headers: {
         "Content-Type": "application/json",
