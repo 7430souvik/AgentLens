@@ -10,8 +10,8 @@ export default function Project() {
     const navigate = useNavigate();
     const { id } = useParams();
     const [project, setProject] = useState<any>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
+    const [, setLoading] = useState(true);
+    const [, setError] = useState("");
     const [overview, setOverview] = useState<any>(null);
 
     useEffect(() => {
