@@ -45,7 +45,7 @@ export default function CreateProject() {
                 response.data;
 
             navigate(
-                `/api/projects/${project.id}`
+                `/projects/${project.id}`
             );
 
         } catch (error: any) {
