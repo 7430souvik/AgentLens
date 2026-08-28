@@ -20,7 +20,7 @@ export class AgentLens {
 
         this.baseUrl =
             options.baseUrl ??
-            "http://localhost:5000/api";
+            "https://agentlens-backend-j3qh.onrender.com/api";
     }
 
     

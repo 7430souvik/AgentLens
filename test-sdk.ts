@@ -15,8 +15,8 @@ const groq = new OpenAI({
 });
 
 const agentlens = new AgentLens({
-    apiKey: "al_live_fbc5f1c7496f35f3134f7239b69d321217b6f24e8744e490591f438dd01093fa",
-    baseUrl: "http://localhost:5000/api",
+    apiKey: "al_live_67984baf1f8707d821f9999ac06cbdd86e34a54a0679236eb08eb075bc01a986",
+    baseUrl: "https://agentlens-backend-j3qh.onrender.com/api",
 });
 
 // const result = await agentlens.track({

@@ -1,6 +1,6 @@
 {
   "name": "@souvik080/agentlens-sdk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AgentLens SDK for AI and LLM observability",
   "type": "module",
   "main": "./dist/index.js",
