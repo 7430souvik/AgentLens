@@ -34,7 +34,7 @@ export default function Login() {
             console.log("6. POST /auth/login");
 
             const response = await api.post(
-                "/auth/login",
+                "/api/auth/login",
                 {
                     email:email.trim().toLowerCase(),
                     password,

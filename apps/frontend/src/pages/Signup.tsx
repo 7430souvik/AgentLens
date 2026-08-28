@@ -31,7 +31,7 @@ export default function Signup() {
             setError("");
 
             const response = await api.post(
-                "/auth/signup",
+                "/api/auth/signup",
                 {
                     name: name.trim(),
                     email: email
