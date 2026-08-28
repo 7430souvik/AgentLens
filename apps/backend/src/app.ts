@@ -10,7 +10,7 @@ import cors from "cors";
 
 app.use(
     cors({
-        origin: "http://localhost:5173",
+        origin: "https://agentlens-3.onrender.com",
         credentials: true,
     })
 );
