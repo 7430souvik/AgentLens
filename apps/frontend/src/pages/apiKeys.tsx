@@ -23,7 +23,7 @@ export default function ApiKey() {
 
     const [showNewKey, setShowNewKey] =useState(false);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
+    const [, setError] = useState("");
     const { id } = useParams();
     const [revoking, setRevoking] = useState(false);
 

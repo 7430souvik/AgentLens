@@ -9,7 +9,7 @@ export default function Signup() {
     const [password, setPassword] = useState("");
 
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
+    const [, setError] = useState("");
 
      const handleSignup = async () => {
         if (!name || !email || !password) {

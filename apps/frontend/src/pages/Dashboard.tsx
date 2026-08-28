@@ -19,7 +19,7 @@ type Project = {
 export default function Dashboard() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
+    const [ ,setError] = useState("");
     const [stats, setStats] = useState({
     totalEvents: 0,
     errors: 0,
@@ -27,7 +27,7 @@ export default function Dashboard() {
     estimatedCost: 0,
     });
     const [project, setProject] = useState<any>(null);
-    const [apiKey, setApiKey] = useState<any>(null);
+    
 
     const [totalEvents, setTotalEvents] = useState(0);
     const [totalErrors, setTotalErrors] = useState(0);
@@ -213,34 +213,31 @@ export default function Dashboard() {
 
 // }, [project?.id]);
 
-    function getProjectStatus(
-            totalEvents: number,
-            errors: number
-        ) {
-            if (totalEvents === 0) {
-                return "healthy";
-            }
+    // function getProjectStatus(
+    //         totalEvents: number,
+    //         errors: number
+    //     ) {
+    //         if (totalEvents === 0) {
+    //             return "healthy";
+    //         }
 
-            const errorRate =
-                (errors / totalEvents) * 100;
+    //         const errorRate =
+    //             (errors / totalEvents) * 100;
 
-            if (errorRate >= 2) {
-                return "warning";
-            }
+    //         if (errorRate >= 2) {
+    //             return "warning";
+    //         }
 
-            return "healthy";
-        }
+    //         return "healthy";
+    //     }
+    
         const setupSteps = [
         {
             number: "1",
             title: "Create a project",
             completed: projects.length > 0,
         },
-        {
-            number: "2",
-            title: "Generate an API key",
-            completed: !!apiKey,
-        },
+        
         {
             number: "3",
             title: "Send your first event",
@@ -251,7 +248,7 @@ export default function Dashboard() {
             title: "Analyze an error",
             completed: totalErrors > 0,
         },
-    ];
+        ];  
 
     const completedSteps = setupSteps.filter(
         (step) => step.completed

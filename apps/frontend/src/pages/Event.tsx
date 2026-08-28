@@ -26,19 +26,19 @@ export default function Events() {
 
     const [events, setEvents] =useState<EventItem[]>([]);
 
-    const [loading, setLoading] =useState(true);
+    const [, setLoading] =useState(true);
 
-    const [error, setError] =useState("");
+    const [, setError] =useState("");
     
     const [stats, setStats] = useState({total:0, successful:0, errors:0});
 
-    const [pagination, setPagination] = useState({page: 1,
-        limit: 50,
-        total: 0,
-        totalPages: 0,
-        hasNextPage: false,
-        hasPreviousPage: false,
-    });
+    // const [pagination, setPagination] = useState({page: 1,
+    //     limit: 50,
+    //     total: 0,
+    //     totalPages: 0,
+    //     hasNextPage: false,
+    //     hasPreviousPage: false,
+    // });
 
     useEffect(() => {
 
