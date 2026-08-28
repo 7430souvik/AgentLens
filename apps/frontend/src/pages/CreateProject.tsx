@@ -27,7 +27,7 @@ export default function CreateProject() {
             setError("");
 
             const response = await api.post(
-                "/api/projects",
+                "/projects",
                 {
                     name: name.trim(),
                     description:
