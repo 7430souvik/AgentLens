@@ -8,6 +8,9 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
+    preview: {
+        allowedHosts: ["agentlens-3.onrender.com"],
+    },
 
     resolve: {
         alias: {
